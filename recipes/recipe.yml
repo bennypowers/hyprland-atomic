@@ -5,7 +5,7 @@ name: hyprland-atomic
 
 description: customized atomic hyprland image
 
-base-image: ghcr.io/wayblueorg/hyprland-gdm
+base-image: ghcr.io/wayblueorg/hyprland
 
 image-version: 42
 
@@ -58,11 +58,11 @@ modules:
           - waypaper
           - xdg-desktop-portal-hyprland
 
-  # - type: rpm-ostree
-  #   remove:
-  #     - thunar
-  #     - thunar-volman
-  #     - thunar-archive-plugin
+  - type: rpm-ostree
+    remove:
+      - thunar
+      - thunar-volman
+      - thunar-archive-plugin
   #     - swaylock
   #     - swayidle
   #     - swaybg
@@ -83,7 +83,6 @@ modules:
     # logitech devices
       - solaar
 
-    # Packages not found: hypridle, hyprland-qt-support, hyprlock, hyprpaper, hyprpicker, hyprpolkitagent
     # candy
       - hyprpaper
       - hyprpicker
@@ -114,6 +113,7 @@ modules:
       - broadcom-wl
 
     # nautilus turtle plugin
+      - nautilus
       - dbus-python-devel
       - nautilus-python
       - python3-pygit2
