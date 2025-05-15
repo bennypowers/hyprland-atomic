@@ -58,12 +58,14 @@ modules:
           - waypaper
           - xdg-desktop-portal-hyprland
 
-  - type: rpm-ostree
-    remove:
-      - thunar
-      - swaylock
-      - swayidle
-      - swaybg
+  # - type: rpm-ostree
+  #   remove:
+  #     - thunar
+  #     - thunar-volman
+  #     - thunar-archive-plugin
+  #     - swaylock
+  #     - swayidle
+  #     - swaybg
 
   - type: rpm-ostree
     repos:
