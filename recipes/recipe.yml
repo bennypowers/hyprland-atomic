@@ -14,6 +14,8 @@ modules:
     remove:
       - hyprland
       - xdg-desktop-portal-hyprland
+      - aylurs-gtk-shell
+      - aylurs-gtk-shell2
 
   - type: rpm-ostree
     repos:
@@ -69,6 +71,8 @@ modules:
     install:
       - hyprland
       - xdg-desktop-portal-hyprland
+      - aylurs-gtk-shell
+      - aylurs-gtk-shell2
 
     # broadcom-wl dependency
       - rpmfusion-nonfree-release
