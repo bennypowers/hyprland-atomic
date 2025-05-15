@@ -1,44 +1,65 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
+
 name: hyprland-atomic
-# description will be included in the image's metadata
-description: This is my personal OS image.
 
-# the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 41 # latest is also supported if you want new updates ASAP
+description: customized atomic hyprland image
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
+base-image: ghcr.io/wayblueorg/hyprland-gdm
+
+image-version: 42
+
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+      - https://copr.fedorainfracloud.org/coprs/dejan/lazygit/repo/fedora-%OS_VERSION%/dejan-lazygit-fedora-%OS_VERSION%.repo
     install:
-      - micro
-      - starship
+    # broadcom-wl dependency
+      - rpmfusion-nonfree-release
+
+    # logitech devices
+      - solaar
+
+    # candy
+      - hyprpaper
+      - hyprpicker
+      - hypridle
+      - hyprcursor
+      - hyprlock
+      - hyprpolkitagent
+      - hyprland-qt-support
+
+    # terminal
+      - kitty
+
+    # shell
+      - bat
+      - btop
+      - fish
+      - git-delta
+      - highlight
+      - lazygit
+      - luarocks
+      - neovim
+      - pandoc
+
+    # networking
+      - samba
+      - broadcom-wl
+
+    # nautilus turtle plugin
+      - dbus-python-devel
+      - nautilus-python
+      - python3-pygit2
+
     remove:
-      # example: removing firefox (in favor of the flatpak)
-      # "firefox" is the main package, "firefox-langpacks" is a dependency
-      - firefox
-      - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-
-  - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
-    system:
-      # If no repo information is specified, Flathub will be used by default
-      install:
-        - org.mozilla.firefox
-        - org.gnome.Loupe
-      remove:
-        - org.gnome.eog
-    user: {} # Also add Flathub user repo, but no user packages
-
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
-
+      - xorg-x11-server-Xwayland
+      - xfce-polkit
+      - vim
+      - thunar
+      - thunar-volman
+      - thunar-archive-plugin
+      - swaylock
+      - swayidle
+      - swaybg
