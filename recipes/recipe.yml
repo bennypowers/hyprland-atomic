@@ -14,7 +14,6 @@ modules:
     remove:
       - hyprland
       - xdg-desktop-portal-hyprland
-      - xorg-x11-server-Xwayland
 
   - type: rpm-ostree
     repos:
@@ -67,7 +66,6 @@ modules:
     install:
       - hyprland
       - xdg-desktop-portal-hyprland
-      - xorg-x11-server-Xwayland
 
     # broadcom-wl dependency
       - rpmfusion-nonfree-release
