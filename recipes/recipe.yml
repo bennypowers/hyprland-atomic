@@ -27,11 +27,10 @@ modules:
           - hyprdim
           - hypridle
           - hyprland
+          - hyprland-devel
           - hyprland-autoname-workspaces
           - hyprland-contrib
-          - hyprland-git
           - hyprland-plugins
-          - hyprland-plugins-git
           - hyprlang
           - hyprlock
           - hyprnome
@@ -50,7 +49,6 @@ modules:
           - swaylock-effects
           - swww
           - uwsm
-          - waybar-git
           - waypaper
           - xdg-desktop-portal-hyprland
 
