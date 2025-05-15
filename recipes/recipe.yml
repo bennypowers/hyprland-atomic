@@ -61,15 +61,11 @@ modules:
   - type: rpm-ostree
     remove:
       # - thunar
-      - thunar-volman
-      - thunar-archive-plugin
-  #     - swaylock
-  #     - swayidle
-  #     - swaybg
-
-  - type: rpm-ostree
-    remove:
-      - thunar
+      # - thunar-volman
+      # - thunar-archive-plugin
+      - swaylock
+      - swayidle
+      - swaybg
 
   - type: rpm-ostree
     repos:
