@@ -60,7 +60,7 @@ modules:
 
   - type: rpm-ostree
     remove:
-      - thunar
+      # - thunar
       - thunar-volman
       - thunar-archive-plugin
   #     - swaylock
