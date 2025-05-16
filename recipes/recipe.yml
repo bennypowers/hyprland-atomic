@@ -90,6 +90,7 @@ modules:
       - hyprcursor
       - hyprlock
       - hyprshot
+      - hyprnome
       - satty
       - hyprpolkitagent
       - hyprland-qt-support
